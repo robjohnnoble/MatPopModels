@@ -14,6 +14,6 @@ To run the code on your own computer:
 
 You can alternatively download the files and save them on your computer (by clicking the green "Code" button on the main page and selecting "Download ZIP"). Or, if you're familiar with GitHub, you can clone this repository.
 
-Lines beginning with # are comments or code that will not be run. The commented-out lines beginning with "pdf" or "dev.off()" are for saving plots as pdf files.
+Lines beginning with # are comments or code that will not be run.
 
 For further help, see https://support.rstudio.com/hc/en-us/articles/201141096-Getting-Started-with-R.
