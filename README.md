@@ -2,6 +2,8 @@
  
 The code is written in R (https://en.wikipedia.org/wiki/R_(programming_language)).
 
+If you click on the name of an R file (e.g. SimpleMatrix.R) then you can view the code.
+
 You can run snippets of code online, such as here: https://rdrr.io/snippets/.
  
 To run the code on your own computer:
