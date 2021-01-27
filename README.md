@@ -1,8 +1,10 @@
 # MatPopModels
  
 The code is written in R (https://en.wikipedia.org/wiki/R_(programming_language)).
+
+You can run snippets of code online, such as here: https://rdrr.io/snippets/.
  
-The easiest way to try out some code:
+To run the code on your own computer:
 * download and install R (https://cran.rstudio.com/)
 * download and install the free version of RStudio (https://rstudio.com/products/rstudio/download/#download)
 * create a new file (R script)
