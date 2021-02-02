@@ -17,6 +17,13 @@ A <- matrix(c(0, 0, 1, 2, 0.1,
               0, 0, 0.6, 0, 0, 
               0, 0, 0, 0.5, 0), nrow = 5, byrow = TRUE)
 
+# right whale example from Section 5.2.1 of Caswell:
+B <- matrix(c(0, 0, 0.13, 0, 0, 
+              0.9, 0.85, 0, 0, 0, 
+              0, 0.12, 0.71, 0, 1, 
+              0, 0, 0.29, 0, 0, 
+              0, 0, 0, 0.85, 0), nrow = 5, byrow = TRUE)
+
 # To find the age distribution at the next time step, 
 # we multiply the previous age distribution vector (n_vec) 
 # by the population projection matrix (A). 
@@ -61,7 +68,21 @@ Re(eigen(A)$values[1])
 # Now try changing the entries of A to see the effects on 
 # w, v and the population growth rate.
 
+##### Euler-Lotka equation:
 
+omega <- dim(A)[1] # number of age classes
+f <- A[1, ] # f[i] is per capita fecundity at age i - 1
+s <- diag(A[2:omega, 1:(omega - 1)]) # s[i] is survival from age i - 1 to age i
+s <- c(s, 0.4) # need to add the final entry of s, which is not defined by A
+b <- f / s # b[i] is offspring at age i conditional on surviving to age i
 
+l <- vector() # l[i] is probability of surviving to age i - 1
+l[1] <- 1 # probability of surviving to age 0
+for(i in 2:(omega + 1)) l[i] <- l[i - 1] * s[i - 1] # because s[i] = l[i + 1] / l[i]
 
+lambda <- Re(eigen(A)$values[1]) # lambda is the dominant eigenvalue
+
+# in the Euler-Lotka equation we sum across ages from 1 to omega:
+sum(l[2:(omega + 1)] * b / lambda^(1:omega))
+# the result should be 1
 
