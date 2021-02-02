@@ -49,7 +49,7 @@ v <- Re(eigen(t(A))$vectors[, 1])
 # We need to rescale v so it can be interpreted as a reproductive value 
 # (remember that any scalar multiple of an eigenvector is also an eigenvector).
 # The rescaling factor is 1 / (t(v) * w), where t means transpose.
-v_rescaled <- v / c(t(v) %*% w)
+v_rescaled <- v / c(t(v) %*% w_rescaled)
 
 # Here is a bar plot of the reproductive value as a function of age:
 barplot(v_rescaled)
